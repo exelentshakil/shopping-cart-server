@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\..\\Backend\\api-assets\\laravel-api-rest-master\\laravel-api-rest-master"
+		},
+		{
+			"path": "..\\..\\..\\Backend\\api-assets\\laravel-api-boilerplate-jwt-master\\laravel-api-boilerplate-jwt-master"
+		},
+		{
+			"path": "..\\..\\..\\Backend\\api-assets\\laravel-api-boilerplate-jwt-book-master\\laravel-api-boilerplate-jwt-book-master"
+		},
+		{
+			"path": "..\\..\\react-shopping-cart"
+		}
+	],
+	"settings": {}
+}
