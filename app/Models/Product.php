@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,7 +14,11 @@ class Product extends Model {
      * @var array
      */
     protected $fillable = [
-        'name', 'subText', 'price', 'qty',
+        'name', 'subText', 'price', 'stock', 'description', 'image',
     ];
+
+    public function user() {
+        return $this->belongsTo( User::class );
+    }
 
 }

@@ -5,6 +5,7 @@ use App\Exceptions\PermissionException;
 use App\Http\Resources\Product as ProductResource;
 use App\Http\Resources\ProductSingle;
 use App\Models\Product;
+use App\Models\User;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
@@ -18,7 +19,8 @@ class ProductController extends Controller {
      */
     public function index() {
         //return response()->json( Product::paginate(20), 200);
-        return new ProductResource( Product::paginate( 20 ) );
+
+        return new ProductResource( Product::with( 'user' )->paginate( 20 ) );
     }
 
     /**
@@ -86,7 +88,7 @@ class ProductController extends Controller {
                 throw ValidationException::withMessages( $validation );
             } else {
 
-                $product->update( $request->only( ['name', 'subText', 'price', 'qty'] ) );
+                $product->update( $request->only( ['name', 'subText', 'price', 'stock'] ) );
 
                 return response()->json( [
                     'status' => 'updated',

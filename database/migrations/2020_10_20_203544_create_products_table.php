@@ -16,7 +16,7 @@ class CreateProductsTable extends Migration {
             $table->string( 'name' );
             $table->string( 'subText' );
             $table->integer( 'price' );
-            $table->integer( 'qty' )->default( 0 );
+            $table->integer( 'stock' )->default( 0 );
 
             $table->timestamps();
         } );
